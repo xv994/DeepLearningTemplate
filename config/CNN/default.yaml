@@ -1,0 +1,38 @@
+# default.yaml
+# fast_dev_run: true
+fast_dev_run: false
+
+trainer:
+  version: 0
+  seed: 42
+  batch_size: 128
+  optimizer: "SGD"
+  criterion: "L1"
+  num_workers: 8
+  train_shuffle: true
+  val_shuffle: false
+  learning_rate: 0.01
+  weight_decay: 0.0001
+  momentum: 0.9
+  precision: "medium"
+  accelerator: "gpu"
+  devices:
+    - 0
+    - 1
+  max_epochs: 500
+  max_steps: -1
+
+logger:
+  project: "ProjectName"
+  entity: "user"
+  log_dir: "./log"
+  group: "CNN"
+  tags:
+    - "CNN"
+  description: "Simple CNN"
+
+paths:
+  train_path: "data/MNIST/train_data.csv"
+  val_path: "data/MNIST/val_data.csv"
+  test_path: "data/MNIST/test_data.csv"
+  # ckpt_path: ""
