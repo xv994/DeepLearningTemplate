@@ -1,0 +1,11 @@
+numpy
+pandas
+prefetch_generator
+shutil
+tensorboard
+tensorboardX
+torch
+torchaudio
+torchinfo
+torchvision
+yaml
