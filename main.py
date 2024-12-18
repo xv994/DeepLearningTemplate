@@ -2,6 +2,7 @@ from argparse import ArgumentParser
 import yaml
 
 import trainer.CNN as CNN
+from util.send_email import send_email
 
 if __name__ == '__main__':
     
@@ -17,3 +18,5 @@ if __name__ == '__main__':
         raise FileNotFoundError('Configuration file not found. Please check the path to the configuration file.')
 
     CNN.train(config)
+    
+    send_email(CNN.__file__)
